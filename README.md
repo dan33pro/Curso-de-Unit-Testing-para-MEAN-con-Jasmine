@@ -1,4 +1,4 @@
-# Curso-de-Unit-Testing-para-MEAN-con-Jasmine
+# Curso de Unit Testing para MEAN con Jasmine
 ## Bienvenida e Introducción
 ### ¿Qué son las pruebas unitarias?
 Las pruebas unitarias o Unit testing forman parte de los diferentes procedimientos que se
