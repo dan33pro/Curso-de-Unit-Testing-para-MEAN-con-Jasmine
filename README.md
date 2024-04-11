@@ -112,6 +112,36 @@ El segundo argumento de la función `it()` es en sí mismo una función, que cua
 
 Las funciones `expect()` se utilizan para probar realmente las cosas que “espera” que sean ciertas.
 
+#### Ejemplo de la clase
+```js
+const saludar = (nombre) => `Hola ${nombre}`;
+
+console.log(saludar("Platzi"));
+
+function expect(actual) {
+    return {
+        toBe(expect) {
+            if (actual !== expect) {
+                throw new Error("Prueba no existosa");
+            }
+        },
+    };
+}
+
+function it(title, callback) {
+    try {
+        callback();
+        console.log(`Prueba: ${title} fue exitosa`);
+    } catch (error) {
+        console.error(`Prueba: ${title} no fue exitosa`);
+    }
+}
+
+it("La función saluda", () => {
+    expect(saludar("Platzi")).toBe("Hola Platzi");
+});
+```
+
 #### Archivos de la clase
 - [prueba.js](https://static.platzi.com/media/tmp/class-files/github/unit-testing/unit-testing-3.funciones-expect-it/prueba.js)
 - [README.md](https://static.platzi.com/media/tmp/class-files/github/unit-testing/unit-testing-3.funciones-expect-it/README.md)
