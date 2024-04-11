@@ -83,3 +83,27 @@ Las pruebas unitarias sirven para:
 - [prueba.js](https://static.platzi.com/media/tmp/class-files/github/unit-testing/unit-testing-2.primera-prueba-unitaria/prueba.js)
 - [README.md](https://static.platzi.com/media/tmp/class-files/github/unit-testing/unit-testing-2.primera-prueba-unitaria/README.md)
 - [index.html](https://static.platzi.com/media/tmp/class-files/github/unit-testing/unit-testing-2.primera-prueba-unitaria/index.html)
+
+### Las funciones expect() y it()
+Vamos a seguir trabajando con los archivos anteriores pero vamos a refactorizar su definición:
+
+Los errores en tiempo de ejecución también tienen como resultado un nuevo objeto `Error` que es creado y lanzado.
+Normalmente los objetos de Error se crean con la intención de lanzarlos utilizando _throw_. Es posible manejar el error mediante _try catch_:
+```js
+try {
+    throw new Error("Algo salió mal!");
+} catch (e) {
+    alert("Bien hecho");
+}
+```
+
+La función `it()` define una prueba de _jasmine_. Se llama así porque su nombre hace que las pruebas de lectura sean casi como leer en inglés.
+
+El segundo argumento de la función `it()` es en sí mismo una función, que cuando se ejecute probablemente ejecutará un número de funciones `_expect()`.
+
+Las funciones `expect()` se utilizan para probar realmente las cosas que “espera” que sean ciertas.
+
+#### Archivos de la clase
+- [prueba.js](https://static.platzi.com/media/tmp/class-files/github/unit-testing/unit-testing-3.funciones-expect-it/prueba.js)
+- [README.md](https://static.platzi.com/media/tmp/class-files/github/unit-testing/unit-testing-3.funciones-expect-it/README.md)
+- [index.html](https://static.platzi.com/media/tmp/class-files/github/unit-testing/unit-testing-3.funciones-expect-it/index.html)
