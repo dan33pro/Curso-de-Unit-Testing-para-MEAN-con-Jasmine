@@ -205,3 +205,34 @@ function it(title, callback) {
 
 ### Organizar el código para correr utilizando node.js
 ___
+Como la forma en que funciona **JavaScript** con **node.js** es un poco diferente a como funciona en un navegador, tenemos que refactorizar nuestro código para que funcione con modulos, para esto vamos a hacer los siguientes cambios:
+
+1. En el `app.js` exportamos `saludar()`:
+```js
+const saludar = (nombre) => `Hola ${nombre}`;
+
+module.exports = saludar;
+```
+
+2. En nuestro `framework` exportamos un objeto con las funciones `expect()` e `it()`:
+```js
+module.exports = {
+    expect,
+    it,
+};
+```
+
+3. Y en nuestro `app.spec.js` importamos las funciones necesarias:
+```js
+const { it, expect} = require('./framework');
+const saludar = require('./app');
+```
+
+> [!NOTE]
+> Para correr las pruebas con `node.js` usamos `node app.spec.js`
+
+## Análisis estático de código
+___
+___
+### Herramientas de análisis estático de código
+___
