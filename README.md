@@ -236,3 +236,86 @@ ___
 ___
 ### Herramientas de análisis estático de código
 ___
+**Linters:** Herramientas de alertas. Nos ayudan a seguir las reglas o convenciones de nuestros equipos sin tener que memorizar todo el libro de reglas; solo debemos programar y asegurarnos de que estas herramientas revisen nuestro código.
+
+Por ejemplo: **ESLint**, **JSHint**, **CSSComb** o **scsslint**.
+
+Corrección automática: Herramientas que nos ayudan a revisar y arreglar nuestro código sin importar si usamos un editor de código u otro; funcionan para todos los casos y gustos de la comunidad. Por ejemplo: **Prettier**.
+
+**Tipado:** JavaScript es lenguaje de tipado dinámico, podemos cambiar el tipo de variables cada vez que queramos o necesitemos. Pero, podemos usar diferentes herramientas para implementar el tipado fuerte, es decir, que podamos usar variables con tipos diferentes al que definimos inicialmente (a menos que hagamos una conversión).
+
+La herramienta de tipado más popular en JavaScript es **TypeScript** pero tambien existen algunas alternativas como **Flow** y **React** **PropTypes**.
+
+### ESLint: Agregando alertas a nuestro código con ECMA Script
+___
+ESLint es una herramienta que identifica y reporta patrones y errores en código ECMAScript/JavaScript. Es similar a JS-Lint y JSHint con algunas diferencias:
+
+- ESLint usa Espree para analizar JavaScript.
+- ESLint usa un AST para evaluar patrones en código.
+- ESLint soporta plugins, cada regla es un plugin y puedes agregar más en desarrollo.
+
+> [!NOTE]
+> Puedes instalar el plugin en VSCode o instalarlo desde la terminal con: `npm install -g eslint`
+
+> [!IMPORTANT]
+> En los proyectos se crea un archivo de configuración `.eslintrc` con la configuración deseada.
+
+#### Lecturas recomendadas
+- [ESLint - Pluggable JavaScript linter](https://eslint.org/)
+- [eslint-config-standard/eslintrc.json at master · standard/eslint-config-standard · GitHub](https://github.com/standard/eslint-config-standard/blob/master/eslintrc.json)
+
+### Herramientas de corrección de estilo
+**Prettier** es un formateador de código opinado. Aplica un estilo coherente al analizar su código y reimprimirlo con sus propias reglas que toman en cuenta la longitud máxima de la línea, envolviendo el código cuando sea necesario.
+
+Puede ejecutarse en su editor al guardar, en un gancho de confirmación previa o en entornos CI para garantizar que su base de código tenga un estilo coherente sin que los desarrolladores tengan que publicar un comentario minucioso sobre una revisión de código.
+
+Ofrece soporte para:
+
+- JavaScript, including ES2017
+- JSX
+- Angular
+- Vue
+- Flow
+- TypeScript
+- CSS, Less, and SCSS
+- HTML
+- JSON
+- GraphQL
+- Markdown, including GFM and MDX
+- YAML
+
+Por ejemplo tenemos éste codigo de JavaScript mal formateado:
+```js
+foo(reallyLongArg(), omgSoManyParameters(), IShouldRefactorThis(), isThereSeriouslyAnotherOne());
+```
+
+Al pasar Prettier nos lo deja de una manera más legible:
+```js
+foo(
+  reallyLongArg(),
+  omgSoManyParameters(),
+  IShouldRefactorThis(),
+  isThereSeriouslyAnotherOne()
+);
+```
+
+> [!NOTE]
+> Puedes instalar el plugin en VSCode o instalarlo desde la terminal con: `npm install -g prettier`
+>
+> Desde **shell** podemos formatear un archivo con: `prettier --write framework.js`
+
+#### Lecturas recomendadas
+- [Prettier · Opinionated Code Formatter](https://prettier.io/)
+
+
+### Herramientas de tipado
+TypeScript es un lenguaje de programación libre y de código abierto desarrollado y mantenido por Microsoft.
+
+Es un superconjunto de JavaScript, que esencialmente añade tipado estático y objetos basados en clases.
+
+TypeScript extiende la sintaxis de JavaScript, por tanto cualquier código JavaScript existente debería funcionar sin problemas.
+
+Está pensado para grandes proyectos, los cuales a través de un compilador de TypeScript se traducen a código JavaScript original.
+
+#### Lecturas recomendadas
+- [TypeScript - JavaScript that scales.](https://www.typescriptlang.org/)
