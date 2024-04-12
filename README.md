@@ -406,12 +406,12 @@ Finalmente Jasmine nos permite verificar la ejecución de la función por medio 
 Cómo reto ve al siguiente enlace, has un fork del proyecto y realiza las pruebas relacionadas con el método `nextMonth()`. Recuerda crear un espía para eliminar la dependencia con nuestra API.
 
 #### Finalmente, te dejo un listado de preguntas y respuestas sobre todo lo que puedes hacer con espías:
-##### ¿Cómo se crea un espía?
+- **¿Cómo se crea un espía?**
 ```js
 spyOn(obj, 'method') // obj.method es una función
 ```
 
-##### ¿Cómo verificar que un método fue llamado?
+- **¿Cómo verificar que un método fue llamado?**
 ```js
 const ref = spyOn(obj, 'method');
 expect(ref).toHaveBeenCalled();
@@ -419,7 +419,7 @@ expect(ref).toHaveBeenCalled();
 expect(obj.method).toHaveBeenCalled()
 ```
 
-##### ¿Cómo verificar que un método fue llamado con un parámetro específico?
+- **¿Cómo verificar que un método fue llamado con un parámetro específico?**
 ```js
 const ref = spyOn(obj, 'method');
 expect(ref).toHaveBeenCalledWith('foo', 'bar');
@@ -427,22 +427,22 @@ expect(ref).toHaveBeenCalledWith('foo', 'bar');
 expect(obj.method).toHaveBeenCalledWith('foo', 'bar')
 ```
 
-##### ¿Cómo puedo verificar el número exacto de ejecuciones de un método?
+- **¿Cómo puedo verificar el número exacto de ejecuciones de un método?**
 ```js
 expect(obj.method.callCount).toBe(2);
 ```
 
-##### ¿Cómo espiar en un método sin modificar su comportamiento?
+- **¿Cómo espiar en un método sin modificar su comportamiento?**
 ```js
 spyOn(obj, 'method').andCallThrough();
 ```
 
-##### ¿Cómo puedo cambiar el valor retornado por un método?
+- **¿Cómo puedo cambiar el valor retornado por un método?**
 ```js
 spyOn(obj, 'method').andReturn('value');
 ```
 
-##### ¿Cómo puedo sobreescribir un método?
+- **¿Cómo puedo sobreescribir un método?**
 ```js
 spyOn(obj, 'method').andCallFake(() => 'this is a function');
 ```
