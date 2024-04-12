@@ -146,3 +146,62 @@ it("La función saluda", () => {
 - [prueba.js](https://static.platzi.com/media/tmp/class-files/github/unit-testing/unit-testing-3.funciones-expect-it/prueba.js)
 - [README.md](https://static.platzi.com/media/tmp/class-files/github/unit-testing/unit-testing-3.funciones-expect-it/README.md)
 - [index.html](https://static.platzi.com/media/tmp/class-files/github/unit-testing/unit-testing-3.funciones-expect-it/index.html)
+
+### Organizando el código para correr en la web
+---
+
+1. Ahora bien vamos a refactorizar los archivos para separar las resposabilidades, para esto creamos un archivo `app.js` con:
+```js
+const saludar = (nombre) => `Hola ${nombre}`;
+```
+
+2. Luego creamos un archivo `app.spec.js` con:
+```js
+console.log(saludar("Platzi"));
+
+it("La función saluda", () => {
+    expect(saludar("Platzi")).toBe("Hola Platzi");
+});
+```
+
+3. Y creamos otro archivo `framework.js` con:
+```js
+function expect(actual) {
+    return {
+        toBe(expect) {
+            if (actual !== expect) {
+                throw new Error("Prueba no existosa");
+            }
+        },
+    };
+}
+
+function it(title, callback) {
+    try {
+        callback();
+        console.log(`✓ ${title}`);
+    } catch (error) {
+        console.error(`× ${title}`);
+    }
+}
+```
+
+5. Por ultimo importamos los `scripts` en el `index.html`:
+```html
+...
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi primera prueba unitaria</title>
+    <script src="./framework.js"></script>
+    <script src="./app.js"></script>
+    <script src="./app.spec.js"></script>
+</head>
+...
+```
+
+> [!NOTE]
+> Ahora vamos a refactorizar el código para que no solo corra en el navegador.
+
+### Organizar el código para correr utilizando node.js
+___
